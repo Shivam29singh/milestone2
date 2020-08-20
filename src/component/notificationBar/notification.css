@@ -1,0 +1,20 @@
+#navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: brown;
+}
+
+.navbar-items:last-child {
+  border-right: none;
+}
+
+.navbar-items .notification-bar {
+  color: white;
+  padding: 14px 16px;
+}
+
+.navbar-items .notification-bar:hover:not(.active) {
+  background-color: #333;
+}
