@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./editProduct.css";
+// import "./edit.css";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import editProductBroadcast from "../../actions/editProductBroadcast";

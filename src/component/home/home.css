@@ -54,11 +54,11 @@
 }
 
 .button1 {
-  background-color: blue;
+  background-color: deepskyblue;
 }
 
 .button2 {
-  background-color: red;
+  background-color: forestgreen;
 }
 
 @media only screen and (max-width: 760px),

@@ -3,6 +3,7 @@ import "./addProduct.css";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import addProductBroadcast from "../../actions/newProductBroadcast";
+import { Row, Col, Container, Form, Button, Card } from "react-bootstrap";
 
 class AddProduct extends Component {
   constructor(props) {
@@ -43,127 +44,141 @@ class AddProduct extends Component {
   };
   render() {
     return (
-      <div>
-        <div className="container">
-          <header id="addProduct-header">ADD PRODUCT</header>
-          <form onSubmit={this.contactSubmit}>
-            <div className="row">
-              <div className="col-25">
-                <label htmlFor="categoryname">Category Name:</label>
-              </div>
-              <div className="col-75">
-                <select
-                  name="categoryname"
-                  className="input-select"
-                  onChange={this.changeHandler}
-                >
-                  <option>Electronics</option>
-                  <option>Accessories</option>
-                  <option>Clothing</option>
-                </select>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-25">
-                <label>Product Name:</label>
-              </div>
-              <div className="col-75">
-                <input
-                  type="text"
-                  className="input-text"
-                  id="productname"
-                  name="productname"
-                  autoComplete="off"
-                  placeholder="Enter Product Name.."
-                  onChange={this.changeHandler}
-                  title="Name should consists of letters and greater than length 3"
-                  required
-                />
-                {/* <span style={{ color: "red", fontSize: "14px" }}>{this.state.errors["productname"]}</span> */}
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-25">
-                <label>Quantity</label>
-              </div>
-              <div className="col-75">
-                <input
-                  type="number"
-                  className="input-text"
-                  id="productquantity"
-                  name="productquantity"
-                  autoComplete="off"
-                  placeholder="Enter Product Quantity.."
-                  onChange={this.changeHandler}
-                  title="Quantity should be a number"
-                  required
-                />
-                {/* <span style={{ color: "red", fontSize: "14px" }}>{this.state.errors["productquantity"]}</span> */}
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-25">
-                <label>Price</label>
-              </div>
-              <div className="col-75">
-                <input
-                  type="number"
-                  className="input-text"
-                  id="productprice"
-                  name="productprice"
-                  autoComplete="off"
-                  placeholder="Enter Product Price.."
-                  onChange={this.changeHandler}
-                  title="Price should be a number"
-                  required
-                />
-                {/* <span style={{ color: "red", fontSize: "14px" }}>{this.state.errors["productprice"]}</span> */}
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-25">
-                <label htmlFor="instock">In Stock:</label>
-              </div>
-              <div className="col-75">
-                <select
-                  name="instock"
-                  className="input-select"
-                  onChange={this.changeHandler}
-                >
-                  <option>YES</option>
-                  <option>NO</option>
-                </select>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-25">
-                <label>imgUrl</label>
-              </div>
-              <div className="col-75">
-                <input
-                  type="text"
-                  className="input-text"
-                  id="img"
-                  name="img"
-                  autoComplete="off"
-                  placeholder="Enter image Url"
-                  onChange={this.changeHandler}
-                  title="imgUrl should be a link"
-                  required
-                />
-                {/* <span style={{ color: "red", fontSize: "14px" }}>{this.state.errors["productprice"]}</span> */}
-              </div>
-            </div>
-            <div className="row">
-              <input type="submit" value="Submit" />
-            </div>
-          </form>
-          {/* <div className="product-deleted">
-                    <span className="closebtn" onClick="this.parentElement.style.display='none';">&times;</span>
-                    <strong>Product Deleted</strong>
-                </div> */}
-        </div>
-      </div>
+      <Container>
+        <Card>
+          <Card.Body className="body">
+            <Card.Title>ADD PRODUCT</Card.Title>
+
+            <Form onSubmit={this.contactSubmit}>
+              <Form.Group>
+                <Row>
+                  <Col>
+                    <Form.Label>Category Name:</Form.Label>
+                  </Col>
+
+                  <Col>
+                    <Form.Control
+                      className="form-control"
+                      as="select"
+                      custom
+                      name="categoryname"
+                      onChange={this.changeHandler}
+                    >
+                      <option>Electronics</option>
+                      <option>Accessories</option>
+                      <option>Clothing</option>
+                    </Form.Control>
+                  </Col>
+                </Row>
+              </Form.Group>
+              <Form.Group>
+                <Row>
+                  <Col>
+                    <Form.Label>Product Name:</Form.Label>
+                  </Col>
+                  <Col>
+                    <Form.Control
+                      className="form-control"
+                      type="text"
+                      id="productname"
+                      name="productname"
+                      autoComplete="off"
+                      placeholder="Enter Product Name.."
+                      onChange={this.changeHandler}
+                      title="Name should consists of letters and greater than length 3"
+                      required
+                    />
+                  </Col>
+                </Row>
+              </Form.Group>
+              <Form.Group>
+                <Row>
+                  <Col>
+                    <Form.Label>Quantity</Form.Label>
+                  </Col>
+                  <Col>
+                    <Form.Control
+                      className="form-control"
+                      type="number"
+                      id="productquantity"
+                      name="productquantity"
+                      autoComplete="off"
+                      placeholder="Enter Product Quantity.."
+                      onChange={this.changeHandler}
+                      title="Quantity should be a number"
+                      required
+                    />
+                  </Col>
+                </Row>
+              </Form.Group>
+              <Form.Group>
+                <Row>
+                  <Col>
+                    <Form.Label>Price</Form.Label>
+                  </Col>
+                  <Col>
+                    <Form.Control
+                      className="form-control"
+                      type="number"
+                      id="productprice"
+                      name="productprice"
+                      autoComplete="off"
+                      placeholder="Enter Product Price.."
+                      onChange={this.changeHandler}
+                      title="Price should be a number"
+                      required
+                    />
+                  </Col>
+                </Row>
+              </Form.Group>
+              <Form.Group>
+                <Row>
+                  <Col>
+                    <Form.Label htmlFor="instock">In Stock:</Form.Label>
+                  </Col>
+                  <Col>
+                    <Form.Control
+                      className="form-control"
+                      as="select"
+                      custom
+                      name="instock"
+                      onChange={this.changeHandler}
+                    >
+                      <option>YES</option>
+                      <option>NO</option>
+                    </Form.Control>
+                  </Col>
+                </Row>
+              </Form.Group>
+              <Form.Group>
+                <Row>
+                  <Col>
+                    <Form.Label>imgUrl</Form.Label>
+                  </Col>
+                  <Col>
+                    <Form.Control
+                      type="text"
+                      className="input-text"
+                      id="img"
+                      name="img"
+                      autoComplete="off"
+                      placeholder="Enter image Url"
+                      onChange={this.changeHandler}
+                      title="imgUrl should be a link"
+                      required
+                    />
+                  </Col>
+                </Row>
+              </Form.Group>
+              <Row className="justify-content-md-center">
+                <Button variant="primary" type="submit">
+                  Submit
+                </Button>
+              </Row>
+            </Form>
+          </Card.Body>
+        </Card>
+      </Container>
     );
   }
 }

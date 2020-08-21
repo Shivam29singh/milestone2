@@ -16,6 +16,12 @@ class Home extends Component {
   componentWillMount() {
     this.setState({ productList: this.props.allproducts });
   }
+  componentWillReceiveProps(newProps) {
+    if (newProps.allproducts !== this.props.allproducts) {
+      console.log("prop updateds");
+      this.setState({ productList: newProps.allproducts });
+    }
+  }
   updateProduct = (product) => {
     // console.log(this.props)
     // console.log("update clicked!!")
@@ -116,7 +122,7 @@ class Home extends Component {
     return (
       <div>
         <NotificationBar
-          total={this.props.allproducts.length}
+          total={this.state.productList.length}
         ></NotificationBar>
         <div style={{ textAlign: "center" }}>
           <button className="addbutton button1" onClick={this.addProductClick}>

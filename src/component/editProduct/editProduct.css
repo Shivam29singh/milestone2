@@ -1,3 +1,100 @@
-.container {
+/* .container {
   background-color: cornflowerblue;
+} */
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f7f7f7;
+}
+
+.card {
+  width: 700px;
+  padding: 40px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 10px 10px 43px -9px rgba(0, 0, 0, 0.25);
+  font-family: "Roboto", sans-serif;
+}
+
+.card h1 {
+  margin: 0px;
+  margin-bottom: 20px;
+}
+
+.label-input {
+  font-size: 18px;
+  display: inline-block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.form-control {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid;
+  border-color: rgb(208, 212, 226);
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.form-control:focus {
+  transition: 0.25s ease-in;
+  outline: none;
+  border: 1px solid;
+  border-color: #436cff;
+}
+
+.btn {
+  margin-top: 20px;
+  padding: 6px;
+  width: 100%;
+  border-radius: 5px;
+  align-items: center;
+  font-size: 18px;
+  background-color: #436cff;
+  color: #ffffff;
+  border: 1px solid;
+  border-color: #436cff;
+  cursor: pointer;
+}
+
+.btn:hover {
+  transition: 0.25s ease-in;
+  background-color: rgb(59, 99, 245);
+  color: #ffffff;
+  border: 1px solid;
+  border-color: rgb(59, 99, 245);
+}
+
+.btn:focus {
+  outline: none;
+  border: 1px solid;
+  border-color: #436cff;
+}
+
+.disabled {
+  background-color: rgb(232, 237, 255);
+}
+
+.label-remember {
+  display: inline-block;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.check {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.check:focus {
+  outline: none;
+  border: 1px solid;
 }
