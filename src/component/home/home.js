@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import axios from "axios";
+import sendProductsBroadcast from "../../actions/sendProductsBroadcast";
 import "./home.css";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
@@ -14,6 +16,9 @@ class Home extends Component {
     };
   }
   componentWillMount() {
+    if (this.props.allproducts.length === 0) {
+      this.getAllProducts();
+    }
     this.setState({ productList: this.props.allproducts });
   }
   componentWillReceiveProps(newProps) {
@@ -22,6 +27,20 @@ class Home extends Component {
       this.setState({ productList: newProps.allproducts });
     }
   }
+
+  getAllProducts = () => {
+    axios.get("http://localhost:3000/products").then(
+      (res) => {
+        console.log(res.data);
+        this.props.sendProducts(res.data);
+        this.setState({ productList: this.props.allproducts });
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
+  };
+
   updateProduct = (product) => {
     // console.log(this.props)
     // console.log("update clicked!!")
@@ -33,8 +52,8 @@ class Home extends Component {
 
   deleteProduct = (id) => {
     // console.log(id)
-    this.props.deleteProduct(id);
-    console.log(this.props.deleteProduct(id));
+    this.props.delProduct(id);
+    // console.log(this.props.deleteProduct(id));
   };
 
   addProductClick = () => {
@@ -180,7 +199,8 @@ function convertStoreToProps(store) {
 function convertPropToEventAndBroadcast(dispatch) {
   return bindActionCreators(
     {
-      deleteProduct: deleteProductBroadcast,
+      delProduct: deleteProductBroadcast,
+      sendProducts: sendProductsBroadcast,
     },
     dispatch
   );

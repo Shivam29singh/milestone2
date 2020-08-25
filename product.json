@@ -1,0 +1,13 @@
+{
+  "products": [
+    {
+      "category": "Electronics",
+      "name": "led tv",
+      "price": "1",
+      "quantity": "1",
+      "instock": "YES",
+      "img": "https://rukminim1.flixcart.com/image/312/312/kc54ivk0/television/g/5/r/mi-l40m5-5ain-original-imaftc5frwsvkmvz.jpeg?q=70",
+      "id": 3
+    }
+  ]
+}
